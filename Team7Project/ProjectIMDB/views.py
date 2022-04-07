@@ -44,7 +44,7 @@ def movie_index(request):
 
     return render(request, 'browse-movies.html', context_data)
 
-
+#Register
 def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
