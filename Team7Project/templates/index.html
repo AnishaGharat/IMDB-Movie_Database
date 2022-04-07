@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block home_block %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Welcome to IMDB!</title>
+    </head>
+    <body>
+    <div class="row">
+        <div class="col-7">
+            <div class="container-fluid">
+                <div class="container-fluid" style="padding-top: 20px; text-align: center">
+                    <h4 style="color: #F5DE50">News</h4>
+                </div>
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators" style="background-color: transparent">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNzg4ZTgyMmUtZGY2NS00NDBhLWE5OGUtMGE2NzliNjc2ZjA5XkEyXkFqcGdeQWFsZWxvZw@@._V1_QL75_UX500_CR0,0,500,281_.jpg 500w, https://m.media-amazon.com/images/M/MV5BNzg4ZTgyMmUtZGY2NS00NDBhLWE5OGUtMGE2NzliNjc2ZjA5XkEyXkFqcGdeQWFsZWxvZw@@._V1_QL75_UX750_CR0,0,750,422_.jpg 750w, https://m.media-amazon.com/images/M/MV5BNzg4ZTgyMmUtZGY2NS00NDBhLWE5OGUtMGE2NzliNjc2ZjA5XkEyXkFqcGdeQWFsZWxvZw@@._V1_QL75_UX1000_CR0,0,1000,563_.jpg 1000w"
+                                 class="rounded mx-auto d-block" style="margin: auto; width: 700px" alt="...">
+                            <div class="carousel-caption d-none d-md-block" style="background-color: transparent">
+                                <h5 style="background-color: transparent">Why Was Jared Leto Against Prosthetics for
+                                    'Morbius'?</h5>
+                                <a style="background-color: transparent; color: #F5DE50"
+                                   href="https://imdb-video.media-imdb.com/vi642564889/1434659607842-pgv4ql-1648059831816.mp4?Expires=1649413365&Signature=mxouv12qr5FhTKUB-UJRnZHsaXvUCuhyAgkJ3PE3NREV2w~WDBMpYPjdNmS2vm-efiZSn1SICkb3WxD5uqk-42PxKPiDGD~Ew0ysLQp0HRH3ZQE~FsrMjqgDfIvFqFdNmmfzOLPQFVUjXm2wllgc9bGDVsch64-0w-6GsQQY1151mX-ECrVoOCGRvPmZ5sQ~tXCwu3xx3YJiIVnMnaWrNgOA1uYZCjISiUy9W2AGoJ1Wc0fWoep2M2apL2MTnaH8~85Wi06GyuYOoZpO2QldUVlvaRImlmfiOMJ3LLocJumS~WjQE~GOmDtw2z2KwVApZmr7ExDbcJIZqhsQlPX4KA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA">Watch
+                                    Interview Here</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX500_CR0,0,500,281_.jpg 500w, https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX750_CR0,0,750,422_.jpg 750w, https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg 1000w"
+                                 class="rounded mx-auto d-block" style="margin: auto; width: 700px" alt="...">
+                            <div class="carousel-caption d-none d-md-block" style="background-color: transparent">
+                                <h5 style="background-color: transparent">Tom Cruise Returns in Sequel 'Top Gun:
+                                    Maverick'</h5>
+                                <a style="background-color: transparent;color: #F5DE50"
+                                   href="https://imdb-video.media-imdb.com/vi632472089/1434659607842-pgv4ql-1648562542211.mp4?Expires=1649414141&Signature=WLhGwzgQR~WcEHZqH~w-hC2mgboLxfyIqgld0VJ-mjG1ZNLnZhdL-uiKz11nrRuV3w9iec5j9lpWk6FavZxa2KSgwUOsPftSx-EGzHk8EoWQjoQb~EAyOo9aZ52R33uHHbv47OrmkPi0acDp6~fBombN-c9X~AvPu20F8C8QjEToyO1bbah4H4FXxELHiLWL1w5GK42BO1DOBj53BbXyk6wZSDHY5FFXHq882A6dG7JMlpf6n16obSbPEnKvPB-9Htw-3z5KeK~YiDe-gVe-Y9gqIst4FmFSEHr-AOy28D96X55nCYOhVXgX4QWdJjuC3UnqVMGUCo8lTbK~w~ztQQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA">Watch
+                                    the New Trailer</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYTlhMzhkNzgtYjBlMS00MTRkLThmZDItNDZkNGI5OWNiMDkwXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX500_CR0,0,500,281_.jpg 500w, https://m.media-amazon.com/images/M/MV5BYTlhMzhkNzgtYjBlMS00MTRkLThmZDItNDZkNGI5OWNiMDkwXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX750_CR0,0,750,422_.jpg 750w, https://m.media-amazon.com/images/M/MV5BYTlhMzhkNzgtYjBlMS00MTRkLThmZDItNDZkNGI5OWNiMDkwXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg 1000w"
+                                 class="rounded mx-auto d-block" style="margin: auto; width: 700px" alt="...">
+                            <div class="carousel-caption d-none d-md-block" style="background-color: transparent">
+                                <h5 style="background-color: transparent">Jessica Biel Stars in Candy</h5>
+                                <a style="background-color: transparent;color: #F5DE50"
+                                   href="https://imdb-video.media-imdb.com/vi876725017/1434659607842-pgv4ql-1647363360522.mp4?Expires=1649414687&Signature=d6SFwSq0yK2WpTV1Tizg3CCJCa3Cuunjdk0pmN3fryIjdrVptZYVhmw307Jo1Y~b5ttgTIggZRt4EuDiDBCx3iWkMUtia0wKqfocoVXSvRmpQI4rA~GMmuFTed06hG2mgK4sJwmCMqNk1yt5B83FWL3~mXe9C2oZkXzEIUgpF1-3ZShURTka3IuJ~MURBzfOyY1oY0fnYtN~L2QbjeszbIm2eWF01rw-X-RQ39A9n-qZdjcySoYtGPsiFNmIQLBupgLxIJ-Tb65zFa~iDkcKVfPoQz87MPEO0EOQastfQytLotkd1LEsQ1V6RZcbZQLROH0PsmL38HpF7btyJ~K7Ug__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA">Watch
+                                    the Trailer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="container-fluid " >
+                <div class="container-fluid" style="padding-top: 20px; text-align: center">
+                    <h4 style="color: #F5DE50">New Releases</h4>
+                </div>
+                {% for movie in new_release %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row row-cols-1 row-cols-md-2 g-4 text-center">
+                    {% endif %}
+                    <div class="col-sm-12">
+                        <div class="card bg-dark">
+                            <div class="card-body">
+                                <img src="{{ movie.picture.url }}" class="card-img-top" alt="">
+                                <h6 style="color: #F5DE50" class="card-title">{{ movie.movie_title }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container-fluid header" style="padding-top: 60px">
+                <h1 style="color: #F5DE50">Top 5 Movies</h1>
+            </div>
+            {% for movie in top_movies %}
+                {% if forloop.counter0|divisibleby:5 %}
+                    <div class="row text-white row-cols-1 row-cols-md-3 g-4 text-center">
+                {% endif %}
+            <div class="col-auto" style="cursor: pointer">
+                <div class="card bg-dark text-white" style="width: 20rem;">
+                    <img src="{{ movie.picture.url }}" class="card-img-top img-thumbnail" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #F5DE50">{{ movie.movie_title }}</h5>
+                        {% for rating in movie.rating.all %}
+                            <span class="fa fa-star checked"> {{ rating.rating }}/10</span>
+                        {% endfor %}
+                        <p class="card-text">{{ movie.description }}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #F5DE50">Directed
+                                By: {{ movie.director }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:5 or forloop.last %}</div><!-- row closing -->
+                <hr>{% endif %}
+            {% endfor %}
+        </div>
+    </body>
+    </html>
+{% endblock %}

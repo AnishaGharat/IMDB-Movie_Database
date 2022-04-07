@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block home_block %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Order Movie</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var btn = document.getElementById("mySub");
+                var element = document.getElementById("myToast");
+
+                // Create toast instance
+                var myToast = new bootstrap.Toast(element);
+
+                btn.addEventListener("click", function () {
+                    myToast.show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="header">
+            <h1 style="color: #F5DE50">Order Movie</h1>
+            <h2> {{ msg }}</h2>
+            <form action="{% url 'ProjectIMDB:Order-Movie' %}" method="POST">
+                {% csrf_token %}
+                <div class=" container-fluid align-self-center" style="width: 300px">
+                    <div class="mb-3 mt-3">
+                        <label for="text">Movie Name:</label>
+                        <input type="text" class="form-control" id="text" placeholder="Enter movie name" name="movie">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="release_date">Release Date:</label>
+                        <input type=date class="form-control" id="date"
+                               placeholder="Enter the release date of the movie"
+                               name="movie">
+                    </div>
+                </div>
+                <a>
+                    <button id="mySub" type="button" class="btn btn-primary">Submit</button>
+                </a>
+            </form>
+        </div>
+
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+    <div class="toast" id="myToast">
+        <div class="toast-header bg-white justify-content-center">
+            <strong class="me-auto bg-white "><i class="bi-gift-fill bg-white"></i> Thank You!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" style="color: white">
+            Your order has been received. We will get back to you soon!
+        </div>
+    </div>
+    </div>
+    </body>
+{% endblock %}

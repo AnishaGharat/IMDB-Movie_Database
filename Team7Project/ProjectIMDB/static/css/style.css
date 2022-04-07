@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    background-color: #383d41;
+    font-family: "Amazon Ember";
+}
+
+.imdb-logo {
+    width: 64px;
+    height: 32px;
+    position: relative;
+
+}
+
+/* not active */
+.nav-pills .pill .nav-link:not(.active) {
+    background-color: #818182;
+    color: white;
+}
+
+/* active (faded) */
+.nav-pills .pill .nav-link {
+    background-color: #5a6268;
+    color: white;
+}
+
+
+.btn:not(.active) {
+    color: white;
+    background-color: #5a6268;
+}
+
+.checked {
+    color: orange;
+}
+
+.new-release {
+    padding: 20px;
+    text-align: center;
+    background-color: #383d41;
+    color: #F5DE50;
+    font-size: 20px;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background-color: #383d41;
+    color: white;
+    font-size: 30px;
+}
+
+.login {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
+.register {
+    padding: 20px;
+    color: white;
+    text-decoration-color: white;
+    text-decoration: white;
+    text-emphasis-color: white;
+    font-size: 15px;
+}

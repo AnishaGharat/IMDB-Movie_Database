@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block home_block %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="container-fluid header" style="color: #F5DE50">
+            <h1>Sign Up</h1>
+        </div>
+        <div class="container-fluid register">
+            {% load crispy_forms_tags %}
+            <form method="post" class="register">
+                {% csrf_token %}{{ form|crispy }}
+                <p>Have an account? Login <a href="/login">Here</a>!</p>
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+    </div>
+    </body>
+{% endblock %}

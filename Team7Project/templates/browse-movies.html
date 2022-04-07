@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home_block %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Browse Movies</title>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="container-fluid header">
+            <h1>Browse Movies</h1>
+            <p style="font-size: small">Can't find what you're looking for?</p><a class="nav-link" data-toggle="tab"
+                                                                                  href="{% url 'ProjectIMDB:Order-Movie' %}">Order
+            a Movie</a>
+        </div>
+        {% for movie in movies %}
+            {% if forloop.counter0|divisibleby:3 %}
+                <div class="row text-white row-cols-1 row-cols-md-3 g-4 text-center">
+            {% endif %}
+        <div class="col-auto" style="cursor: pointer">
+            <div class="card text-white" style="width: 25rem;">
+                <img src="{{ movie.picture.url }}" class="card-img-top img-thumbnail" style="height: 600px" alt="">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #F5DE50">{{ movie.movie_title }}</h5>
+                    {% for rating in movie.rating.all %}
+                        <span class="fa fa-star checked"> {{ rating.rating }}/10</span>
+                    {% endfor %}
+                    <p class="card-text">{{ movie.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background-color: #F5DE50">Directed
+                            By: {{ movie.director }}</li>
+                        <li class="list-group-item" style="background-color: #F5DE50">Genre Type:</li>
+                        {% for genre in movie.genre.all %}
+                            <li class="list-group-item" style="background-color: #F5DE50">{{ genre.genre_title }}</li>
+                        {% endfor %}
+                        <p class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 header" style="font-size: large; padding:5px">Cast</h5>
+                            </div>
+                            {% for actor in movie.actors.all %}
+                                <p class="mb-1 list-group-item"
+                                   style="background-color: white">{{ actor.full_name }}</p>
+                            {% endfor %}
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing -->
+            <hr>{% endif %}
+        {% endfor %}
+    </div>
+
+    </body>
+    </html>
+{% endblock %}

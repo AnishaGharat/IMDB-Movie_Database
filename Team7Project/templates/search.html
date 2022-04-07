@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home_block %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Movie Search</title>
+    </head>
+    <body>
+    <div class="container">
+        {% if object_list %}
+            <div class="container-fluid">
+            <div class="container-fluid header">
+                <h1>Movie Search</h1>
+            </div>
+            {% for movie in object_list %}
+                {% if forloop.counter0|divisibleby:3 %}
+                    <div class="row text-white row-cols-1 row-cols-md-3 g-4 text-center">
+                {% endif %}
+            <div class="col-auto" style="cursor: pointer">
+                <div class="card bg-dark text-white" style="width: 25rem;">
+                    <img src="{{ movie.picture.url }}" class="card-img-top img-thumbnail" style="height: 600px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #F5DE50">{{ movie.movie_title }}</h5>
+                        <p class="card-text">{{ movie.description }}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #F5DE50">Directed
+                                By: {{ movie.director }}</li>
+                            {% for genre in movie.genre.all %}
+                                <li class="list-group-item" style="background-color: #F5DE50"> Genre
+                                    Type: {{ genre.genre_title }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing -->
+                <hr>{% endif %}
+            {% endfor %}
+        {% else %}
+            <p class="header" style="padding-top-top: 250px;align-self: center"> We couldn't find the movie, please try again or order online below: </p>
+            <a class="nav-link header" style="color: #005cbf" data-toggle="tab" href="{% url 'ProjectIMDB:Order-Movie' %}">Order a Movie</a>
+        {% endif %}
+        </div>
+    </div>
+    </body>
+    </html>
+{% endblock %}
