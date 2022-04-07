@@ -59,7 +59,7 @@ def sign_up(request):
 
     return render(request, 'register.html', {"form": form})
 
-
+#Search 
 class filter_objects(ListView):
     model = Movie
     template_name = "search.html"
